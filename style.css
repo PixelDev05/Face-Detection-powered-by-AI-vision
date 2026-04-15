@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080d1a;
+}
+
+.app-bg {
+  background: #080d1a;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  color: #e2e8f0;
+}
+
+.app-inner {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2rem;
+}
+
+.app-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #0f2044;
+  border: 1px solid #1e4080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.app-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.app-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #f0f6ff;
+  letter-spacing: -0.3px;
+}
+
+.app-sub {
+  font-size: 13px;
+  color: #5a7ca8;
+  margin-top: 2px;
+}
+
+/* Cards */
+.card {
+  background: #0c1628;
+  border: 1px solid #162847;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3b6cb0;
+  margin-bottom: 0.75rem;
+}
+
+/* Config inputs */
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input-row input {
+  flex: 1;
+  min-width: 180px;
+  background: #07101f;
+  border: 1px solid #1a3560;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #c8daef;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-row input::placeholder {
+  color: #2d4d75;
+}
+
+.input-row input:focus {
+  border-color: #2d6ccf;
+}
+
+/* Upload zone */
+.upload-zone {
+  border: 1.5px dashed #1a3560;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: #07101f;
+  position: relative;
+}
+
+.upload-zone:hover {
+  border-color: #2d6ccf;
+  background: #091629;
+}
+
+.upload-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.upload-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  background: #0f2044;
+  border-radius: 10px;
+  border: 1px solid #1e4080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.upload-text {
+  font-size: 14px;
+  color: #7aa0cc;
+}
+
+.upload-hint {
+  font-size: 12px;
+  color: #2d4d75;
+  margin-top: 4px;
+}
+
+/* Detect button */
+.btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 12px;
+  background: #1a4ca6;
+  border: none;
+  border-radius: 9px;
+  color: #e8f1ff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: #1e58c0;
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Preview area */
+.preview-area {
+  background: #07101f;
+  border: 1px solid #162847;
+  border-radius: 10px;
+  min-height: 160px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#previewImage {
+  max-width: 100%;
+  border-radius: 8px;
+  display: none;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 2rem 0;
+}
+
+.preview-placeholder svg {
+  width: 36px;
+  height: 36px;
+  opacity: 0.3;
+}
+
+.preview-placeholder p {
+  font-size: 13px;
+  color: #2d4d75;
+}
+
+/* Results */
+#result {
+  font-size: 14px;
+  color: #7aa0cc;
+  line-height: 1.6;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #111e35;
+  font-size: 14px;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-key {
+  color: #4a7fbb;
+}
+
+.result-val {
+  color: #c8daef;
+  font-weight: 500;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: #0f2044;
+  border: 1px solid #1e4080;
+  color: #7aaddd;
+}
